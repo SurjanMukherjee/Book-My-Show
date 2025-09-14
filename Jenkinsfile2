@@ -100,7 +100,7 @@ pipeline {
 
         stage('Deploy to EKS Cluster') {
             steps {
-                withAWS(credentials: 'aws', region: "${AWS_REGION}") {
+                withAWS(credentials: 'aws-creds-id', region: "${AWS_REGION}") {
                     sh '''
                     echo "Verifying AWS credentials..."
                     aws sts get-caller-identity
